@@ -7,7 +7,7 @@ Record and analyze movements of athletes to optimize the players' movements, wit
 3. find movements that best prevent injuries. 
 
 Project list items:
-1) find softeware we need for image recognition and analysis
+1) find software we need for image recognition and analysis
 2) find videos and pictures to get started with the project
 3) be able to extract relevent data from the software
 4) be able to extract relevant data from the software for our project
