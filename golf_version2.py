@@ -202,6 +202,6 @@ def solutionFile(st):
     
     finalGrid = grid(st)
     for x in finalGrid:
-        print(*x, sep=" ")
+        print(*x, sep="")
 
 solutionFile(initgrid)
