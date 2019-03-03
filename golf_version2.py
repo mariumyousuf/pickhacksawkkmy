@@ -27,8 +27,8 @@ class golf:
         this function reads the puzzle file, parses it to get the puzzle grid, size of the grid, and the number of worms
         """
         grid = []
-        #filename = sys.argv[1]
-        with open("golf_course50_50_3.txt", 'r') as f:
+        filename = sys.argv[1]
+        with open(filename, 'r') as f:
             for line in f:
                 myList = []
                 for word in line.split():
@@ -86,7 +86,7 @@ class golf:
                 listCost.append(cost)
 
         self.h_cost = min(listCost)
-        print("h_cost", self.h_cost)
+        #print("h_cost", self.h_cost)
 
         return self.h_cost
 
@@ -97,14 +97,14 @@ def action(grid):
     """
     nextMoves = []
     r, c = grid.ballPos
-    print("r,c", r,c)
+    #print("r,c", r,c)
 
     for row, col in [(r, c+1), (r, c-1), (r+1, c), (r-1, c), (r+1, c+1), (r-1, c-1), (r+1, c-1), (r-1, c+1)]:
         #(0, 1), (0, -1), (-1, 0), (1, 0), (1, 1), (-1, -1), (1, -1), (-1, 1)
         if [row, col] in grid.potentialLoc or [row, col] == grid.goalPos:
             nextMoves.append([row, col])
     
-    print("next m", nextMoves)
+    #print("next m", nextMoves)
     return nextMoves
 
 def transitionModel(grid, action):
@@ -128,7 +128,7 @@ def GBeFGS(st):
     explored.append(st)
     
     while True:
-        print("while")
+        #print("while")
         if st.ballPos == st.goalPos:
             break
         
@@ -137,7 +137,7 @@ def GBeFGS(st):
         st.actionRecord.append(st.ballPos)
         
         for a in act:
-            print("action", a)
+            #print("action", a)
             currentState = transitionModel(st, a)
             
             if currentState not in explored:
